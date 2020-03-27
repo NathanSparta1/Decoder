@@ -8,12 +8,14 @@ namespace DecoderConsole
         {
             //Console.WriteLine(Decoder.SkipCode("Save souls Now! John or James Watson!"));
             //Console.WriteLine(Decoder.SkipCode("Saint or Sinner? James or John? The more is less?"));
-            Console.WriteLine(Decoder.FirstLetter("wait oranges really killed eggs dad"));
+            //Console.WriteLine(Decoder.FirstLetter("wait oranges really killed eggs dad"));
             
         }
     }
 
-    class Decoder
+
+    // create new secret code implementation here
+    public class Decoder
     {
         /// <summary>
         /// Roman numeral decoder
@@ -119,5 +121,34 @@ namespace DecoderConsole
 
             return rev;
         }
+    }
+
+    public class Decrypt
+    {
+        public static string retValue(string code, string sentence)
+        {
+            // returns the value of the code output depending on what code is selected
+            if(code == "Skip Code")
+            {
+                return Decoder.SkipCode(sentence);
+            }
+
+            else if (code == "First Letter")
+            {
+                return Decoder.FirstLetter(sentence);
+            }
+
+            else if (code == "Roman Numeral")
+            {
+                return   Decoder.Solution(sentence).ToString();
+            }
+
+            // Add new Codes here...
+
+            else return "lol";
+        }
+
+
+
     }
 }
